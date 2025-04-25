@@ -29,4 +29,4 @@ COPY --from=builder /app/node_modules ./node_modules
 EXPOSE 3000
 
 # 启动应用
-CMD ["npm","run", "start"] 
+CMD ["npm","run", "test"] 
