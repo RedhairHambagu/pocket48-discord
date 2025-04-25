@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  pocket48-discord:
+    build: .
+    container_name: pocket48-discord
+    volumes:
+      - ./.env:/app/.env
+      - ./data:/app/data
+    # 方式1：使用环境变量文件
+    # env_file:
+    #   - .env
+    # 方式2：直接指定环境变量（注释掉上面的env_file，取消下面的注释）
+    environment:
+      - P48_ACCOUNT=${P48_ACCOUNT}
+      - P48_PWD=${P48_PWD}
+      - SERVER_ID=${SERVER_ID}
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+      - CLIENT_ID=${CLIENT_ID}
+    restart: unless-stopped 
