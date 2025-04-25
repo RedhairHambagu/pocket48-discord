@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # 安装依赖
-RUN npm ci
+RUN npm install
 
 # 复制源代码
 COPY . .
@@ -29,4 +29,4 @@ COPY --from=builder /app/node_modules ./node_modules
 EXPOSE 3000
 
 # 启动应用
-CMD ["npm", "start"] 
+CMD ["npm","run", "start"] 
